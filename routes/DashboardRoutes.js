@@ -28,7 +28,7 @@ export const DashboardMenu = [
 		id: uuid(),
 		title: 'Dashboard',
 		icon: 'home',
-		link: '/'
+		link: '/dashboard'
 	},
 	{
 		id: uuid(),
@@ -52,7 +52,7 @@ export const DashboardMenu = [
 		title: 'Authentication',
 		icon: 'lock',
 		children: [
-			{ id: uuid(), link: '/authentication/sign-in', name: 'Sign In' },
+			{ id: uuid(), link: '/', name: 'Sign In' },
 			{ id: uuid(), link: '/authentication/sign-up', name: 'Sign Up' },
 			{ id: uuid(), link: '/authentication/forget-password', name: 'Forget Password'}			
 		]

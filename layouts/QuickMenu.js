@@ -1,6 +1,6 @@
 // import node module libraries
 import Link from 'next/link';
-import { Fragment } from 'react';
+import { Fragment, useCallback } from 'react';
 import { useMediaQuery } from 'react-responsive';
 import {
     Row,
@@ -9,7 +9,8 @@ import {
     Dropdown,
     ListGroup,
 } from 'react-bootstrap';
-
+import { signOut } from "next-auth/react";
+import { useRouter } from 'next/router';
 // simple bar scrolling used for notification item scrolling
 import SimpleBar from 'simplebar-react';
 import 'simplebar/dist/simplebar.min.css';
@@ -23,10 +24,16 @@ import useMounted from 'hooks/useMounted';
 const QuickMenu = () => {
 
     const hasMounted = useMounted();
-    
+    const router = useRouter();
     const isDesktop = useMediaQuery({
         query: '(min-width: 1224px)'
     })
+
+    const signOutHandler = useCallback(async()=>{
+         await signOut();
+         console.log("clicked signout");
+         router.push('/');
+    },[]);
 
     const Notifications = () => {
         return (
@@ -120,8 +127,8 @@ const QuickMenu = () => {
                     <Dropdown.Item >
                         <i className="fe fe-settings me-2"></i> Account Settings
                     </Dropdown.Item>
-                    <Dropdown.Item>
-                        <i className="fe fe-power me-2"></i>Sign Out
+                    <Dropdown.Item onClick={signOutHandler}>
+                        <i className="fe fe-power me-2" ></i>Sign Out
                     </Dropdown.Item>
                 </Dropdown.Menu>
             </Dropdown>

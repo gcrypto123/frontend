@@ -1,16 +1,35 @@
 // import node module libraries
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 // import sub components
 import NavbarVertical from './navbars/NavbarVertical';
 import NavbarTop from './navbars/NavbarTop';
-import { Row, Col } from 'react-bootstrap';
+import { Row, Col, Image } from 'react-bootstrap';
+import { signIn, useSession } from "next-auth/react";
+import { useRouter } from 'next/router';
 
 const DefaultDashboardLayout = (props) => {
+	const sessionObj = useSession();
+	const router = useRouter();
 	const [showMenu, setShowMenu] = useState(true);
 	const ToggleMenu = () => {
 		return setShowMenu(!showMenu);
 	};	
+	useEffect(()=>{
+		if(sessionObj?.status==="unauthenticated"){
+			router.push('/')
+		}
+	},[sessionObj])
+
+	if(sessionObj?.status === "loading"){
+		return (<div style={{display:"flex", marginTop:60}} >
+			<Image
+				alt="avatar"
+				src="/images/loading.gif"
+	  		/>
+			</div>);
+	}
+
 	return (		
 		<div id="db-wrapper" className={`${showMenu ? '' : 'toggled'}`}>
 			<div className="navbar-vertical navbar">

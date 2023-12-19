@@ -4,7 +4,7 @@ import { useRouter } from 'next/router';
 import { NextSeo } from 'next-seo';
 import SSRProvider from 'react-bootstrap/SSRProvider';
 import { Analytics } from '@vercel/analytics/react';
-
+import Provider from 'layouts/Provider'
 // import theme style scss file
 import 'styles/theme.scss';
 
@@ -25,6 +25,7 @@ function MyApp({ Component, pageProps }) {
   
   return (
     <SSRProvider>
+      <Provider>
       <Head>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="keywords" content={keywords} />
@@ -45,6 +46,7 @@ function MyApp({ Component, pageProps }) {
           <Component {...pageProps} />
           <Analytics />
         </Layout>
+        </Provider>
     </SSRProvider>
   )
 }
