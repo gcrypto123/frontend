@@ -2,7 +2,7 @@
 import { Fragment } from "react";
 import Link from 'next/link';
 import { Container, Col, Row } from 'react-bootstrap';
-
+import Tables from "../components/tables";
 // import widget/custom components
 import { StatRightTopIcon } from "widgets";
 
@@ -54,9 +54,12 @@ const Home = () => {
                     <Col xl={8} lg={12} md={12} xs={12}>
 
                         {/* Teams  */}
-                        <Teams />
+                        {/* <Teams /> */}
 
                     </Col>
+                </Row>
+                <Row className="my-6" >
+                    <Tables />
                 </Row>
             </Container>
         </Fragment>

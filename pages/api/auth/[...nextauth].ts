@@ -9,7 +9,6 @@ export default NextAuth({
       name: "Credentials",
       async authorize(credentials, req) {
         // Add logic here to look up the user from the credentials supplied
-
         const res = await fetch("http://localhost:1000/user/login", {
           method: "POST",
           headers: {
@@ -21,15 +20,26 @@ export default NextAuth({
           }),
         });
         const user = await res.json();
-        if ( user?.status == 200 && user) {
-          return Promise.resolve({email: user?.data?.email, role: user?.data?.role, token : user?.data?.token });  
+        console.log(user);
+        if (user?.status == 200 && user) {
+          return user;
         } else {
           throw new Error(user?.message);
         }
       },
+      credentials: undefined
     }),
   ],
-  pages: {
-    signIn: "/",
+  callbacks:{
+    async jwt({token, user}){
+      return {...token,...user};
+    },
+    async session({session, token, user}){
+      session.user= token;
+      return session;
+    } 
   },
+  // pages: {
+  //   signIn: "/",
+  // },
 });
