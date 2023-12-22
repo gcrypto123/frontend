@@ -53,7 +53,7 @@ const Teams = ({ colConfig, rowData, tableName}) => {
             <Table responsive className="text-nowrap">
                 <thead className="table-light">
                     <tr>{
-                            colConfig.length===0 && <th style={{textAlign:"center"}} >No Rows Found</th>
+                            colConfig?.length===0 && <th style={{textAlign:"center"}} >No Rows Found</th>
                         }
                         { colConfig?.map((col,index)=>{
                             return <th>{col}</th>
@@ -61,10 +61,10 @@ const Teams = ({ colConfig, rowData, tableName}) => {
                     </tr>
                 </thead>
                 <tbody>
-                    {rowData.map((item, index) => {
+                    {rowData?.map((item, index) => {
                         return (
                             <tr key={index}>
-                                {colConfig.map((col)=>{
+                                {colConfig?.map((col)=>{
                                     return <td className="align-middle">{item[col]}</td>
                                 })}
                             </tr>

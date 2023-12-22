@@ -40,8 +40,8 @@ export const DashboardMenu = [
 		title: 'Joining History',
 		icon: 'layers',
 		children: [
-			{ id: uuid(), link: '/pages/joining-package-history', name: 'Joining Package History' },
-			{ id: uuid(), link: '/pages/matrix-history', name: 'Matrix History'}
+			{ id: uuid(), link: 'joining-package-history', name: 'Joining Package History' },
+			{ id: uuid(), link: 'matrix-history', name: 'Matrix History'}
 			// { id: uuid(), link: '/pages/billing', name: 'Billing' },
 			// { id: uuid(), link: '/pages/pricing', name: 'Pricing'},
 			// { id: uuid(), link: '/404', name: '404 Error' }
@@ -52,11 +52,18 @@ export const DashboardMenu = [
 		title: 'Earnings',
 		icon: 'layers',
 		children: [
-			{ id: uuid(), link: '/pages/direct-income', name: 'Direct Income' },
-			{ id: uuid(), link: '/pages/high-power-income', name: 'High Power Income' },
-			{ id: uuid(), link: '/pages/global-matrix-level-income', name: 'Global MAtrix Level Income'},	
-			{ id: uuid(), link: '/pages/dividend-income', name: 'Dividend Income'},
-			{ id: uuid(), link: '/pages/leadership-income', name: 'Leadership Income'},	
+			{ id: uuid(), link: '/direct-income', name: 'Direct Income' },
+			{ id: uuid(), link: '/high-power-income', name: 'High Power Income' },
+			{ id: uuid(), link: '/global-matrix-level-income', name: 'Global MAtrix Level Income'},	
+			{ id: uuid(), link: '/dividend-income', name: 'Dividend Income'},
+			{ id: uuid(), link: '/leadership-income', name: 'Leadership Income'},	
+			{ id: uuid(), link: '/matrix-1-income', name: 'Matrix-1 Income'},	
+			{ id: uuid(), link: '/matrix-2-income', name: 'Matrix-2 Income'},	
+			{ id: uuid(), link: '/matrix-3-income', name: 'Matrix-3 Income'},	
+			{ id: uuid(), link: '/matrix-4-income', name: 'Matrix-4 Income'},	
+			{ id: uuid(), link: '/matrix-5-income', name: 'Matrix-5 Income'},	
+			{ id: uuid(), link: '/matrix-6-income', name: 'Matrix-6 Income'},	
+			{ id: uuid(), link: '/matrix-7-income', name: 'Matrix-7 Income'},	
 			{ id: uuid(), link: '/robots-income', name: 'Robots Income'}				
 		]
 	},
@@ -65,9 +72,21 @@ export const DashboardMenu = [
 		title: 'My Team',
 		icon: 'layers',
 		children: [
-			{ id: uuid(), link: '/pages/direct-team', name: 'Direct Team' },
-			{ id: uuid(), link: '/pages/total-team', name: 'Total Team' },
-			{ id: uuid(), link: '/pages/matrix-team', name: 'Matrix Team'}		
+			{ id: uuid(), link: '/direct-team', name: 'Direct Team' },
+			{ id: uuid(), link: '/total-team', name: 'Total Team' },
+			{ 
+				id: uuid(),
+				title: 'Matrix Team',
+				children: [
+					{ id: uuid(), link: '/matrix-team-1', name: 'Matrix Team-1' },
+					{ id: uuid(), link: '/matrix-team-2', name: 'Matrix Team-2' },	
+					{ id: uuid(), link: '/matrix-team-3', name: 'Matrix Team-3' },	
+					{ id: uuid(), link: '/matrix-team-4', name: 'Matrix Team-4' },	
+					{ id: uuid(), link: '/matrix-team-5', name: 'Matrix Team-5' },	
+					{ id: uuid(), link: '/matrix-team-6', name: 'Matrix Team-6' },	
+					{ id: uuid(), link: '/matrix-team-7', name: 'Matrix Team-7' },	
+				]
+			}		
 		]
 	},
 	{
@@ -75,8 +94,8 @@ export const DashboardMenu = [
 		title: 'Withdrawal',
 		icon: 'layers',
 		children: [
-			{ id: uuid(), link: '/pages/withdrawal-request', name: 'Withdrawal Request' },
-			{ id: uuid(), link: '/pages/withdrawal-report', name: 'Withdrawal Report' }
+			{ id: uuid(), link: '/withdrawal-request', name: 'Withdrawal Request' },
+			{ id: uuid(), link: '/withdrawal-report', name: 'Withdrawal Report' }
 		]
 	},
 	{
