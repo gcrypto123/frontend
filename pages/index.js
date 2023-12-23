@@ -110,14 +110,14 @@ const SignIn = () => {
                       Create An Account{" "}
                     </Link>
                   </div>
-                  <div>
+                  {/* <div>
                     <Link
                       href="/authentication/forget-password"
                       className="text-inherit fs-5"
                     >
                       Forgot your password?
                     </Link>
-                  </div>
+                  </div> */}
                 </div>
               </div>
             </Form>

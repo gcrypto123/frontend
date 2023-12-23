@@ -18,7 +18,7 @@ const DirectTeam = ({rowData}) =>{
             return ['#','Id','Address','Status','Current Package','Date'];
         }
     },[])
-    return <><Container fluid className="px-6 py-6">
+    return <><Container fluid className="px-6 py-6 mt-9">
         <Row>
             <Team colConfig={Columns} rowData={formatedRowData} tableName="Direct Team" />
         </Row>

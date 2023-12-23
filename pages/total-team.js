@@ -18,7 +18,7 @@ const TotalTeam = ({rowData}) =>{
             return ['#','Date','Id','Address','Sponser Id','Current Package','Matrix Package'];
         }
     },[])
-    return <><Container fluid className="px-6 py-6">
+    return <><Container fluid className="px-6 py-6 mt-9">
         <Row>
             <Team colConfig={Columns} rowData={formatedRowData} tableName="Total Team" />
         </Row>

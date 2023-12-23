@@ -12,7 +12,7 @@ import {
   useAccordionButton,
   AccordionContext,
 } from "react-bootstrap";
-
+import { signOut } from "next-auth/react";
 // import simple bar scrolling used for notification item scrolling
 import SimpleBar from "simplebar-react";
 import "simplebar/dist/simplebar.min.css";
@@ -333,8 +333,19 @@ const NavbarVertical = (props) => {
               }
             }
           })}
+          <Card bsPrefix="nav-item" key={878787}>
+                    <Link
+                      href={'#'}
+                      className={`nav-link `}
+                      onClick={async()=>{ await signOut()  }}
+                    >
+                      <i className={`nav-icon fe fe-lock me-2`}></i>
+                      Sign Out
+                    </Link>
+                  </Card>
         </Accordion>
         {/* end of Dashboard Menu */}
+                  
       </SimpleBar>
     </Fragment>
   );

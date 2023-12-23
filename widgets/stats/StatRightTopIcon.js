@@ -11,16 +11,16 @@ const StatRightTopIcon = props => {
         <Card>
             <Card.Body>
                 <div className="d-flex justify-content-between align-items-center mb-3">
-                    <div>
-                        <h4 className="mb-0">{info.title}</h4>
-                    </div>
                     <div className="icon-shape icon-md bg-light-primary text-primary rounded-2">
                         {info.icon}
                     </div>
+                    <div>
+                        <h2 className="">{info.value}</h2>
+                    </div>
                 </div>
-                <div>
-                    <h1 className="fw-bold">{info.value}</h1>
-                    <p className="mb-0" dangerouslySetInnerHTML={{ __html: info.statInfo}}></p>
+                <div className='d-flex justify-content-end' >
+                    <h4 className="mb-0" style={{fontSize:14, color:"gray"}} >{info.title}</h4>
+                    {/* <p className="mb-0" dangerouslySetInnerHTML={{ __html: info.statInfo}}></p> */}
                 </div>
             </Card.Body>
         </Card>

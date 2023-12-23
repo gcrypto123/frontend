@@ -18,7 +18,7 @@ const DividendIncome = ({rowData}) =>{
             return ['#','MemberID','Income','Reference ID','Package'];
         }
     },[])
-    return <><Container fluid className="px-6 py-6">
+    return <><Container fluid className="px-6 py-6 mt-9">
         <Row>
             <Team colConfig={Columns} rowData={formatedRowData} tableName="Dividend Income" />
         </Row>

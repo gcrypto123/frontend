@@ -99,14 +99,15 @@ const QuickMenu = () => {
                     bsPrefix=' '
                     className="rounded-circle"
                     id="dropdownUser">
-                    <div className="avatar avatar-md avatar-indicators avatar-online">
-                        <Image alt="avatar" src='/images/avatar/avatar-1.jpg' className="rounded-circle" />
+                    <   div className="avatar avatar-md avatar-indicators avatar-online">
+                        <Image alt="avatar" src='/images/avatar/profile1.jpg' className="rounded-circle" />
                     </div>
                 </Dropdown.Toggle>
                 <Dropdown.Menu
                     className="dropdown-menu dropdown-menu-end "
                     align="end"
                     aria-labelledby="dropdownUser"
+                    style={{zIndex:200000}}
                     show
                     >
                     <Dropdown.Item as="div" className="px-4 pb-0 pt-2" bsPrefix=' '>
@@ -116,18 +117,6 @@ const QuickMenu = () => {
                             </div>
                             <div className=" dropdown-divider mt-3 mb-2"></div>
                     </Dropdown.Item>
-                    {/* <Dropdown.Item eventKey="2">
-                        <i className="fe fe-user me-2"></i> Edit Profile
-                    </Dropdown.Item>
-                    <Dropdown.Item eventKey="3">
-                        <i className="fe fe-activity me-2"></i> Activity Log
-                    </Dropdown.Item>
-                    <Dropdown.Item className="text-primary">
-                        <i className="fe fe-star me-2"></i> Go Pro
-                    </Dropdown.Item>
-                    <Dropdown.Item >
-                        <i className="fe fe-settings me-2"></i> Account Settings
-                    </Dropdown.Item> */}
                     <Dropdown.Item onClick={signOutHandler}>
                         <i className="fe fe-power me-2" ></i>Sign Out
                     </Dropdown.Item>

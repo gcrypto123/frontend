@@ -18,7 +18,7 @@ const WithdrawalRequestReport = ({rowData}) =>{
             return ['#','User ID', 'Wallet Address','Total Amount','Services Charge','NET Amount','Date'];
         }
     },[])
-    return <><Container fluid className="px-6 py-6">
+    return <><Container fluid className="px-6 py-6 mt-6">
         <Row>
             <Team colConfig={Columns} rowData={formatedRowData} tableName="Withdrawal Request Report" />
         </Row>

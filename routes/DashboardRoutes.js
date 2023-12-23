@@ -54,7 +54,7 @@ export const DashboardMenu = [
 		children: [
 			{ id: uuid(), link: '/direct-income', name: 'Direct Income' },
 			{ id: uuid(), link: '/high-power-income', name: 'High Power Income' },
-			{ id: uuid(), link: '/global-matrix-level-income', name: 'Global MAtrix Level Income'},	
+			{ id: uuid(), link: '/global-matrix-level-income', name: 'Global Matrix Level Income'},	
 			{ id: uuid(), link: '/dividend-income', name: 'Dividend Income'},
 			{ id: uuid(), link: '/leadership-income', name: 'Leadership Income'},	
 			{ id: uuid(), link: '/matrix-1-income', name: 'Matrix-1 Income'},	
@@ -103,13 +103,13 @@ export const DashboardMenu = [
 		title: 'Upgraded Users',
 		icon: 'layers',
 		link:'/upgraded-user'
-	},
-	{
-		id: uuid(),
-		title: 'Logout',
-		icon: 'lock',
-		link: ''
 	}
+	// {
+	// 	id: uuid(),
+	// 	title: 'Logout',
+	// 	icon: 'lock',
+	// 	link: '/signout'
+	// }
 	// {
 	// 	id: uuid(),
 	// 	title: 'Components',

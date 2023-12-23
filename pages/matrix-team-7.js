@@ -18,7 +18,7 @@ const Matrix7Team = ({rowData}) =>{
             return ['#','Member Id','Parent ID'];
         }
     },[])
-    return <><Container fluid className="px-6 py-6">
+    return <><Container fluid className="px-6 py-6 mt-6">
         <Row className='mb-6'>
             <Team colConfig={Columns} rowData={formatedRowData} tableName="Matrix Team-7 (Level-1)" />
         </Row>

@@ -1,5 +1,6 @@
 import NextAuth from "next-auth";
 import CredentialsProvider from "next-auth/providers/credentials";
+import {BE_HOST} from '../../../global-const';
 export default NextAuth({
   session:{
     jwt: true
@@ -9,7 +10,7 @@ export default NextAuth({
       name: "Credentials",
       async authorize(credentials, req) {
         // Add logic here to look up the user from the credentials supplied
-        const res = await fetch("http://localhost:1000/user/login", {
+        const res = await fetch(`${BE_HOST}/user/login`, {
           method: "POST",
           headers: {
             "Content-Type": "application/json",

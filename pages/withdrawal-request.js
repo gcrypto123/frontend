@@ -13,7 +13,7 @@ import {
   } from "react-bootstrap";
 const WithdrawalRequest = () =>{
    return <>
-   <Card className="mx-5 my-5">
+   <Card className="mx-5 my-5 mt-15">
     <Card.Header>Withdrawal Request</Card.Header>
     <Card.Body>
         <Card.Title style={{marginBottom:8}}>Withdrawal Avaliable</Card.Title>

@@ -1,7 +1,7 @@
 // import node module libraries
 import { Row, Col, Card, Form, Button, Image } from "react-bootstrap";
 import Link from "next/link";
-
+import {BE_HOST} from "../../global-const";
 // import authlayout to override default layout
 import AuthLayout from "layouts/AuthLayout";
 import { useCallback, useState } from "react";
@@ -14,7 +14,7 @@ const SignUp = () => {
   const [email,setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [mobile, setMobile] = useState("");
-  const [referralId, setReferralId] = useState("");
+  const [referralId, setReferralId] = useState( !!router?.query?.ref ? router?.query?.ref : "" );
   const [confirmPassword, setConfirmPassword] = useState("");
   const [terms,setTerms] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
@@ -22,7 +22,7 @@ const SignUp = () => {
   const register = useCallback(async(email,password,mobile,referralId)=>{
     let user = null; 
     try{
-    const res = await fetch("http://localhost:1000/user/register", {
+    const res = await fetch(`${BE_HOST}/user/register`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -243,14 +243,14 @@ const SignUp = () => {
                       Already member? Login{" "}
                     </Link>
                   </div>
-                  <div>
+                  {/* <div>
                     <Link
                       href="/authentication/forget-password"
                       className="text-inherit fs-5"
                     >
                       Forgot your password?
                     </Link>
-                  </div>
+                  </div> */}
                 </div>
               </div>
             </Form>

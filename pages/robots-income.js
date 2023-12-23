@@ -2,6 +2,7 @@ import { useCallback, useMemo } from 'react';
 import Team from '../sub-components/dashboard/Teams'
 import { getSession } from 'next-auth/react';
 import { Container, Col, Row } from 'react-bootstrap';
+import { BE_HOST } from '../global-const'
 const RobotsIncome = ({rowData}) =>{ 
 
     const formatedRowData = rowData.map((row,index)=>{
@@ -17,7 +18,7 @@ const RobotsIncome = ({rowData}) =>{
             return [];
         }
     },[])
-    return <><Container fluid className="px-6 py-6">
+    return <><Container fluid className="px-6 py-6 mt-6">
         <Row>
             <Team colConfig={Columns} rowData={formatedRowData} tableName="Robots Income" />
         </Row>
@@ -28,7 +29,7 @@ const RobotsIncome = ({rowData}) =>{
 export async function getServerSideProps(context) {
     const session = await getSession(context);
     console.log("inside server",session);
-    const res = await fetch("http://localhost:1000/user/robotIncome",{
+    const res = await fetch(`${BE_HOST}/user/robotIncome`,{
         method: 'Get',
         headers:{
             authorization : `bearer ${session?.user?.data?.token}`,

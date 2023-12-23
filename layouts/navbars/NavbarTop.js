@@ -9,7 +9,6 @@ import {
 
 // import sub components
 import QuickMenu from 'layouts/QuickMenu';
-
 const NavbarTop = (props) => {
 	return (
 		<Navbar expanded="lg" className="navbar-classic navbar navbar-expand-lg">
